@@ -18,11 +18,11 @@
 # ---------------------------------------
 danyboard_m0.name=Danyboard M0
 danyboard_m0.vid.0=0x1209
-danyboard_m0.pid.0=0x8123
+danyboard_m0.pid.0=0x812A
 danyboard_m0.vid.1=0x1209
 danyboard_m0.pid.1=0x8123
-danyboard_m0.vid.2.build.usb_product="Danyboard M0"
 
+danyboard_m0.vid.2.build.usb_product="Danyboard M0"
 danyboard_m0.upload.tool=bossac
 danyboard_m0.upload.protocol=sam-ba
 danyboard_m0.upload.maximum_size=262144
@@ -40,7 +40,7 @@ danyboard_m0.build.ldscript=linker_scripts/gcc/flash_with_bootloader.ld
 danyboard_m0.build.openocdscript=openocd_scripts/arduino_zero.cfg
 danyboard_m0.build.variant=danyboard_m0
 danyboard_m0.build.variant_system_lib=
-danyboard_m0.build.vid=0x1234
-danyboard_m0.build.pid=0x8123
+danyboard_m0.build.vid=0x1209
+danyboard_m0.build.pid=0x812A
 danyboard_m0.bootloader.tool=openocd
-danyboard_m0.bootloader.file=zero/samd21_sam_ba.bin
+danyboard_m0.bootloader.file=m0/samd21_sam_ba_danyboard_m0.bin

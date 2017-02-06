@@ -19,8 +19,8 @@
 #ifndef _VARIANT_ARDUINO_ZERO_
 #define _VARIANT_ARDUINO_ZERO_
 
-// The definitions here needs a SAMD core >=1.6.6
-#define ARDUINO_SAMD_VARIANT_COMPLIANCE 10606
+// The definitions here needs a SAMD core >=1.6.10
+#define ARDUINO_SAMD_VARIANT_COMPLIANCE 10610
 
 /*----------------------------------------------------------------------------
  *        Definitions
@@ -124,7 +124,7 @@ static const uint8_t ATN = PIN_ATN;
 #define PAD_SERIAL1_TX       (UART_TX_PAD_2)
 #define PAD_SERIAL1_RX       (SERCOM_RX_PAD_3)
 
-// Serial5
+// Serial5 - ESP8266
 #define PIN_SERIAL5_RX       (31ul)
 #define PIN_SERIAL5_TX       (30ul)
 #define PAD_SERIAL5_TX       (UART_TX_PAD_2)
@@ -167,6 +167,17 @@ static const uint8_t SCL = PIN_WIRE_SCL;
 #define PIN_USB_DM          (28ul)
 #define PIN_USB_DP          (29ul)
 
+/*
+ * I2S Interfaces
+ */
+#define I2S_INTERFACES_COUNT 1
+
+#define I2S_DEVICE          0
+#define I2S_CLOCK_GENERATOR 3
+#define PIN_I2S_SD          (9u)
+#define PIN_I2S_SCK         (1u)
+#define PIN_I2S_FS          (0u)
+
 #ifdef __cplusplus
 }
 #endif
@@ -188,7 +199,7 @@ extern SERCOM sercom3;
 extern SERCOM sercom4;
 extern SERCOM sercom5;
 
-extern Uart Serial5;
+extern Uart wifi;
 extern Uart Serial1;
 
 #endif
@@ -208,8 +219,8 @@ extern Uart Serial1;
 //
 // SERIAL_PORT_HARDWARE_OPEN  Hardware serial ports which are open for use.  Their RX & TX
 //                            pins are NOT connected to anything by default.
-#define SERIAL_PORT_USBVIRTUAL      SerialUSB
-#define SERIAL_PORT_MONITOR         Serial
+#define SERIAL_PORT_USBVIRTUAL      Serial
+//#define SERIAL_PORT_MONITOR         Serial
 // Serial has no physical pins broken out, so it's not listed as HARDWARE port
 #define SERIAL_PORT_HARDWARE        Serial1
 #define SERIAL_PORT_HARDWARE_OPEN   Serial1
